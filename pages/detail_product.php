@@ -38,7 +38,7 @@ $product = mysqli_fetch_assoc($result);
         <p class="text-grey h6"><?= $product['description']; ?></p>
         <hr>
 
-        <a href="../checkout.php?id=<?= $id; ?>" class="btn btn-success mt-3">Beli</a>
+        <a href="checkout.php?id=<?= $id; ?>" class="btn btn-success mt-3">Beli</a>
       </div>
     </div>
   </div>
