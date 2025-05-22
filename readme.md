@@ -12,29 +12,32 @@ Aplikasi web e-commerce sederhana yang dibangun menggunakan **PHP**, **MySQL**, 
 
 ## 🧱 Teknologi yang Digunakan
 
-| Layer         | Teknologi                         |
-|---------------|-----------------------------------|
-| Frontend      | HTML, CSS, JavaScript, Bootstrap 5 |
-| Backend       | PHP (native)                      |
-| Database      | MySQL                             |
-| Server        | Apache |
+| Layer    | Teknologi                          |
+| -------- | ---------------------------------- |
+| Frontend | HTML, CSS, JavaScript, Bootstrap 5 |
+| Backend  | PHP (native)                       |
+| Database | MySQL                              |
+| Server   | Apache                             |
 
 ## 🗃️ Struktur Database
 
 ### Tabel `users`
+
 - `id` (INT, PK)
 - `username` (VARCHAR)
 - `password` (VARCHAR)
 - `address` (TEXT)
 
 ### Tabel `products`
+
 - `id` (INT, PK)
 - `name` (VARCHAR)
-- `price` (INT)
+- `price` (VARCHAR)
 - `description` (TEXT)
 - `photo` (VARCHAR)
 
 ### Tabel `transactions`
+
 - `id` (INT, PK)
 - `user_id` (FK ke `users.id`)
 - `product_id` (FK ke `products.id`)
