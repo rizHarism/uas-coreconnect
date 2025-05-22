@@ -1,4 +1,6 @@
 <?php
+
+require_once '../includes/session.php';
 require_once '../includes/koneksi.php';
 
 $query = "SELECT * FROM products ORDER BY created_at DESC";

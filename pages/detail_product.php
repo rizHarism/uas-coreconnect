@@ -1,4 +1,5 @@
 <?php
+require_once '../includes/session.php';
 require_once '../includes/koneksi.php';
 
 $id = $_GET['id'];
