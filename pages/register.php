@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+  header("Location: list_product.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -14,7 +23,7 @@
   <!-- Wrapper untuk seluruh konten -->
   <div class="wrapper my-5 px-5">
     <div class="container my-5 p-5 bg-white">
-      <a href="login.html" class="btn btn-outline-secondary mb-3">← Kembali ke Halaman Login</a>
+      <a href="login.php" class="btn btn-outline-secondary mb-3">← Kembali ke Halaman Login</a>
       <h2 class="text-center mb-4">Form Pendaftaran</h2>
 
       <form action="../actions/process_register.php" method="POST">

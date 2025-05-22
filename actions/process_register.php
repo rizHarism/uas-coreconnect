@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $koneksi->bind_param("sssss", $full_name, $email, $hashed_password, $phone, $address);
 
     if ($koneksi->execute()) {
-        echo "<script>alert('Pendaftaran berhasil! Silakan login.'); window.location.href='../login.php';</script>";
+        echo "<script>alert('Pendaftaran berhasil! Silakan login.'); window.location.href='../pages/login.php';</script>";
     } else {
-        echo "<script>alert('Terjadi kesalahan saat menyimpan data!'); window.location.href='register.php';</script>";
+        echo "<script>alert('Terjadi kesalahan saat menyimpan data!'); window.location.href='../pages/register.php';</script>";
     }
 
     $koneksi->close();

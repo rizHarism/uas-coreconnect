@@ -1,7 +1,7 @@
 <?php
 require_once '../includes/koneksi.php';
-session_start();
-// Ambil ID produk dari URL
+require_once '../includes/session.php';
+
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $query = "SELECT * FROM products WHERE id = $id LIMIT 1";
 $result = mysqli_query($conn, $query);
@@ -30,7 +30,7 @@ $user = mysqli_fetch_assoc($userResult);
     <h2 class="text-center mb-4">Checkout</h2>
     <a href="list_product.php" class="btn btn-outline-secondary mb-3">← Kembali ke List Produk</a>
     <hr>
-    <form action="loading/payment_loading.html" method="POST" class="checkout-form">
+    <form action="../loading/payment_loading.php" method="POST" class="checkout-form">
       <div class="card mb-4 p-3 d-flex flex-row ">
         <img src="../image/<?= $product['photo'] ?>" width="150" class="rounded me-5" alt="Thumbnail Produk">
         <div>
@@ -47,7 +47,7 @@ $user = mysqli_fetch_assoc($userResult);
         </div>
       </div>
 
-      <input type="hidden" id="id" name="id_product" value="<?= $product['id']; ?>" />
+      <input type="hidden" id="id" name="product_id" value="<?= $product['id']; ?>" />
 
       <div class="mb-3">
         <label for="nama" class="form-label">Nama Penerima</label>
@@ -61,7 +61,7 @@ $user = mysqli_fetch_assoc($userResult);
       <div class="mb-3">
         <label for="metode" class="form-label">Metode Pembayaran</label>
         <select id="metode" name="metode" class="form-select" required>
-          <option value="0">--Pilih Metode--</option>
+          <option value="">--Pilih Metode--</option>
           <option value="transfer">Transfer Bank</option>
           <option value="cod">Bayar di Tempat (COD)</option>
           <option value="ewallet">E-Wallet</option>

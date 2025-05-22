@@ -1,0 +1,19 @@
+# Nonaktifkan directory listing
+
+Options -Indexes
+
+# Aktifkan URL Rewrite
+
+RewriteEngine On
+
+# Paksa HTTPS
+
+# RewriteCond %{HTTPS} off
+
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Blok file penting
+
+<FilesMatch "\.(env|ini|log|sql|bak|sh|htaccess)$">
+Deny from all
+</FilesMatch>

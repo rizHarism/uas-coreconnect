@@ -1,0 +1,31 @@
+<?php
+require_once '../includes/koneksi.php';
+require_once '../includes/session.php';
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembayaran Berhasil - E-commerce</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <!-- Menggunakan Bootstrap CSS -->
+  <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="text-center p-5">
+      <h2>Pembayaran Berhasil!</h2>
+      <p>Terima kasih telah berbelanja di toko kami.</p>
+      <a href="list_product.php" class="btn btn-success">Kembali Berbelanja</a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap/bootstrap.js"></script>
+</body>
+
+</html>

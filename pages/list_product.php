@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body class="bg-light">
   <div class="container my-5 p-5 bg-white">
-    <a href="login.html" class="btn btn-outline-secondary mb-3">← Log Out</a>
-    <a href="profile/profile.html" class="btn btn-success mb-3">Profil Saya</a>
+    <a href="../actions/logout.php" class="btn btn-outline-secondary mb-3">← Log Out</a>
+    <a href="profile.php" class="btn btn-success mb-3">Profil Saya</a>
     <h4 class="h2 fw-bold fst-italic text-center">Selamat Datang di CoreConnect Store</h4>
     <h5 class="text-center mb-4">Silahkan Pilih Kebutuhan Jaringan Anda</h5>
 
