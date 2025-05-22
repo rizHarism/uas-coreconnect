@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2025 at 10:14 AM
+-- Generation Time: May 22, 2025 at 07:31 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.2.27
 
@@ -51,6 +51,23 @@ INSERT INTO `products` (`id`, `name`, `price`, `description`, `photo`, `created_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL DEFAULT 1,
+  `receiver_name` varchar(100) NOT NULL,
+  `receiver_address` text NOT NULL,
+  `payment_method` enum('transfer','cod','ewallet') NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -69,7 +86,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `phone`, `address`, `created_at`) VALUES
-(1, 'rizqi', 'riski@gmail.com', '$2y$10$hzq/4TB.b2n6HBnJGlF4DeNMYHNu/oQ3VFfVn2OZvmcfYJfBUc246', '123', 'blitar', '2025-05-21 08:47:47');
+(1, 'Rizqi harisma', 'riski@gmail.com', '$2y$10$nkgn3WHuBQYNbbulYmN.1.NFiXflmfjLU2rZ3QOX4bOpx9AdwX3jK', '123', 'blitar', '2025-05-21 08:47:47'),
+(2, 'Ahmad Albar', 'ahmad@mail', '$2y$10$nkgn3WHuBQYNbbulYmN.1.NFiXflmfjLU2rZ3QOX4bOpx9AdwX3jK', '123456', 'blitar', '2025-05-22 05:43:41');
 
 --
 -- Indexes for dumped tables
@@ -79,6 +97,12 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `phone`, `address`,
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `transactions`
+--
+ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -99,10 +123,27 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `transactions`
+--
+ALTER TABLE `transactions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

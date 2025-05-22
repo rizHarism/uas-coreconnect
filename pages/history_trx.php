@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $query);
     <div class="wrapper">
         <div class="container my-5">
             <a href="list_product.php" class="btn btn-outline-secondary mb-3">← Kembali ke List Produk</a>
-            <h3 class="mb-4">Ubah Password</h3>
+            <h3 class="mb-4">Riwayat Transaksi</h3>
             <div class="row">
                 <!-- Sidebar untuk navigasi profil -->
                 <div class="col-md-3">

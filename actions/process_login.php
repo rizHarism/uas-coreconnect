@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../includes/koneksi.php'; // koneksi.php sesuai struktur kamu
+require_once '../includes/koneksi.php';
 
 // Tangkap data POST
 $email = htmlspecialchars(trim($_POST['email'] ?? ''));
